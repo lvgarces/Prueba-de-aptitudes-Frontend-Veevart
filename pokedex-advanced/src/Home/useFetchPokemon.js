@@ -15,7 +15,7 @@ const useFetchPokemon = () => {
         })
           .then(res => res.json())
           .then(data => {
-            console.log('hola')
+            console.log(data)
             setPokemon(data)
             setLoading(false)
             setError(false)
