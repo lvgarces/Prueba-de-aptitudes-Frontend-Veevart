@@ -1,0 +1,13 @@
+.o-cont{
+    text-align: center;
+
+}
+
+.o-cont-search{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 450;
+}

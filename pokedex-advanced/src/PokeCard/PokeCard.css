@@ -1,0 +1,29 @@
+.o-card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 40rem;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.132);
+}
+
+.o-card p{ 
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    
+}
+.o-cont-img{
+    width: 15rem;
+}
+
+.o-cont-ability{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

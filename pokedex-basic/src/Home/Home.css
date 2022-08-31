@@ -1,0 +1,10 @@
+.o-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 8rem;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 450;
+}

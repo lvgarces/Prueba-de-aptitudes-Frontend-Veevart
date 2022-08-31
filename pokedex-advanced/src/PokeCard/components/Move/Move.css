@@ -1,0 +1,9 @@
+.o-move{
+    width: 10rem;
+    background-color: rgb(67, 155, 255);
+    color: white;
+    border-radius: 5px;
+    width: 10rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+}
