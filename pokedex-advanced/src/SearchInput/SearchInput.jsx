@@ -11,7 +11,7 @@ const SearchInput = ({setLoading, setError, setPokemonId}) => {
     if(poke !== ''){
       setError(false)
       setLoading(true)
-      const pokemonID = poke
+      const pokemonID = window.isNaN(parseInt(poke)) ? poke.toLowerCase() : poke
       setPokemonId(pokemonID)
       setPoke('')
       return

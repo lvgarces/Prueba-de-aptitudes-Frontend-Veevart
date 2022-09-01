@@ -11,15 +11,19 @@ const Home = ({pokemon, loading, error, setLoading, setError, setPokemonId}) => 
     
 
     return (
-        <div className="o-cont">
+        <div className="container o-cont">
         
+        <div className='row' >
+        <h2>Busca al pokemon que quieras</h2>
         <SearchInput
         setError={setError}
         setLoading={setLoading}
         setPokemonId={setPokemonId}></SearchInput>
+        </div>
+        
         {error && <p>No se encuentra</p>}
         {pokemon &&
-        <div className="o-cont-search">
+        <div className="row o-cont-search">
         
                 
                     <PokeCard

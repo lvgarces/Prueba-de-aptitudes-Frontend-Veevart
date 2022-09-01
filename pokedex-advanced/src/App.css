@@ -3,6 +3,7 @@
 .App {
   text-align: center;
   font-family: 'Advent Pro', sans-serif;
+  color: rgb(104, 104, 104);
   height: 100%;
 }
 
@@ -10,14 +11,14 @@
   position: relative;
   
 }
-.bg::before {
+.bg:before {
   content: "";
-  position: absolute;
+  position: fixed;
   background: url('/public/fondo.jpeg') repeat;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  opacity: .25;
+  height:100vh;
+  opacity: .7;
   z-index: -1;
 }

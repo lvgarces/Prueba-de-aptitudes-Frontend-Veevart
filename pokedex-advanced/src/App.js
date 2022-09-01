@@ -9,6 +9,7 @@ import Navbar from '../src/Navbar/Navbar'
 import Home from '../src/Home/Home'
 import InfoMoves from '../src/InfoMoves/InfoMoves'
 import useFetchPokemon from './Home/useFetchPokemon';
+import './App.css';
 
 
 function App() {

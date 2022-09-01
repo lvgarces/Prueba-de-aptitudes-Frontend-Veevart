@@ -12,12 +12,14 @@ const PokeCard = ({ name, imgFront, abilities, moves }) => {
         <>
 
             <div className="o-card">
-                <div>
+                <div className='col-sm-5'>
                 <img className="o-cont-img" src={imgFront} alt="" />
-                </div>
-                <p>{name}</p>
-
-                    <p>Abilities</p>
+                <h3>{name}</h3>
+                </ div>
+                
+                <div className='col o-cont-mov-ab'>
+                <div className='row'>
+                    <p className='col o-p-mov-ab'>Abilities</p>
                     <div className="o-cont-ability">
 
                         {
@@ -31,7 +33,9 @@ const PokeCard = ({ name, imgFront, abilities, moves }) => {
                         }
 
                     </div>
-                    <p>Moves</p>
+                    </div>
+                    <div className='row'>
+                    <p className='col o-p-mov-ab'>Moves</p>
                     <div className="o-cont-ability">
                         {
                             moves.slice(0, 6).map((move, index) => (
@@ -48,6 +52,8 @@ const PokeCard = ({ name, imgFront, abilities, moves }) => {
                     <Link to="/movesinfo">
                     <ButtonM />
                     </Link>
+                    </div>
+                    </div>
                     </div>
             </div>
 

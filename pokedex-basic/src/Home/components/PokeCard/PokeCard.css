@@ -7,7 +7,7 @@
     width: 20rem;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.132);
+    box-shadow: 1px 1px 5px 0px rgba(32, 32, 32, 0.384);
     cursor: pointer;
 }
 .o-card:hover{ 

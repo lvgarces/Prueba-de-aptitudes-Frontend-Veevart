@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
 
 const ButtonM = () => {
   const onclick = () => {}
   return (
-    <Button variant="warning" >Moves info</Button>
+    <button type="button" class="btn btn-warning">Moves info</button>
   )
 }
 
