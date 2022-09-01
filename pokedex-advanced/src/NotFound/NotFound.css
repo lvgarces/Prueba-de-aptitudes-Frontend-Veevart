@@ -1,4 +1,15 @@
+.o-not{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
 .o-not img{
-    width: 30rem;
+    width: 100%;
     opacity: .5;
+}
+.o-cont-img{
+    width: 30rem;
+    margin: auto;
 }
