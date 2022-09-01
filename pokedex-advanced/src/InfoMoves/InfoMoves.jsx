@@ -13,7 +13,7 @@ const InfoMoves = ({loading, pokemon, pokeMoves, pokemonMoves }) => {
     
     <div className="container o-cont-infomoves">
       <div>
-      <Link to="/home"><h3>Regresar</h3></Link>
+      <Link to="/home"><h3>Back</h3></Link>
     </div>
       <h1>{pokemon?.name} moves</h1>
       {loading && <Spinner></Spinner>}

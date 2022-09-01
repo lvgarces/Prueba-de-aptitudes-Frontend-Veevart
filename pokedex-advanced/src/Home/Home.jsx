@@ -22,9 +22,9 @@ const Home = ({pokemonID, pokemon, loading, error, setLoading, setError, setPoke
         setLoading={setLoading}
         setPokemonId={setPokemonId}></SearchInput>
         </div>
-        {loading && !pokemon && <Spinner/>}
-        {error && <NotFound pokemon={pokemonID} />}
-        {pokemon &&
+        {error && !loading ? 
+        <NotFound pokemon={pokemonID}/> : 
+        !pokemon ||  loading   ?  <Spinner/> : 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="row o-cont-search">
         
                 
@@ -38,6 +38,8 @@ const Home = ({pokemonID, pokemon, loading, error, setLoading, setError, setPoke
 
             
         </motion.div>}
+        
+        
         </div>
     );
 };
