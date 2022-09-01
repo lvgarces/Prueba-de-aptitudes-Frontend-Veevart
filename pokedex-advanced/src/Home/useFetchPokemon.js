@@ -1,36 +1,46 @@
 import { useEffect, useState } from 'react'
 
 const useFetchPokemon = () => {
-    const [ error, setError ] = useState(false)
-    const [ loading, setLoading ] = useState(true)
-    const [ pokemon, setPokemon ] = useState([])
-    const RandomId = Math.floor(Math.random() * 806 + 1)
-    const [ pokemonID, setPokemonId ] = useState()
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [pokemon, setPokemon] = useState(null)
+  const [pokeMoves, setPokeMoves] = useState([])
+  const RandomId = Math.floor(Math.random() * 806 + 1)
+  const [pokemonID, setPokemonId] = useState()
 
-    useEffect(() => {
-      console.log(pokemonID)
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`,{
-          method: 'GET',
-          headers: {'Content-Type': 'application/json'}
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            setPokemon(data)
-            setLoading(false)
-            setError(false)
-          })
-          .catch(err => {
-            console.log(pokemonID)
-            setLoading(false)
-            setError(true)
-          })
-          
-      }, [pokemonID])
+  const pokemonMoves = () => {
+    if (!pokemon) {
+      return
+    }
+    const moves = pokemon.moves.map(move => fetch(move.move.url))
 
-      return {pokemon, loading, error, setPokemon, setLoading, setError, setPokemonId}
-
+    Promise.all(moves)
+    .then(moves => {
+      return Promise.all(moves.map(move => move.json()))
+    })
+    .then(moves => 
+      setPokeMoves(moves))
     
+  }
+
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+      .then(res => res.json())
+      .then(data => {
+        setPokemon(data)
+        setLoading(false)
+        setError(false)
+      })
+      .catch(err => {
+        setLoading(false)
+        setError(true)
+      })
+
+  }, [pokemonID])
+
+  return { pokemon, loading, error, setPokemon, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves }
+
+
 }
 
 export default useFetchPokemon;

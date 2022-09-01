@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import './SearchInput.css';
 import IconSearch from './search.png';
-import useFetchPokemon from '../Home/useFetchPokemon';
 
 
-const SearchInput = () => {
+const SearchInput = ({setLoading, setError, setPokemonId}) => {
   const [poke, setPoke] = useState('');
-  const { setLoading, setError, setPokemonId} = useFetchPokemon();
 
   const handleSubmit = e => {
     e.preventDefault()

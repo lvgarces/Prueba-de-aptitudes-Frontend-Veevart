@@ -1,16 +1,43 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 import Navbar from '../src/Navbar/Navbar'
 import Home from '../src/Home/Home'
-import useFetchPokemon from '../src/Home/useFetchPokemon';
+import InfoMoves from '../src/InfoMoves/InfoMoves'
+import useFetchPokemon from './Home/useFetchPokemon';
 
 
 function App() {
-  useFetchPokemon();
+
+  const {pokemon, loading, error, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves} = useFetchPokemon();
+
   return (
-    <div className="App bg">
-      <Navbar/>
-      <Home/>
-    </div>
+    <Router>
+      <div className="App bg">
+        <Navbar />
+        <Routes>
+          <Route path="/home" element={<Home
+          pokemon={pokemon}
+          loading={loading}
+          error={error}
+          setLoading={setLoading}
+          setError={setError}
+          setPokemonId={setPokemonId} />} />
+          <Route path="/movesinfo" element={<InfoMoves
+          pokeMoves={pokeMoves}
+          pokemonMoves={pokemonMoves} />} />
+          <Route
+            path="*"
+            element={<Navigate to="/home" replace />}
+          />
+        </Routes>
+
+      </div>
+    </Router>
   );
 }
 

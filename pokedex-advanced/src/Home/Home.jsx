@@ -6,38 +6,32 @@ import useFetchPokemon from './useFetchPokemon';
 import './Home.css'
 
 
-const Home = () => {
+const Home = ({pokemon, loading, error, setLoading, setError, setPokemonId}) => {
 
-    const {pokemon, loading, error} = useFetchPokemon();
-    console.log(pokemon);
-
-    if(error){
-        return (
-          <div>
-            <SearchInput></SearchInput>
-            <p>No se encuentra</p>
-          </div>
-        )
-      }
-
+    
 
     return (
         <div className="o-cont">
         
-        <SearchInput></SearchInput>
+        <SearchInput
+        setError={setError}
+        setLoading={setLoading}
+        setPokemonId={setPokemonId}></SearchInput>
+        {error && <p>No se encuentra</p>}
+        {pokemon &&
         <div className="o-cont-search">
         
                 
                     <PokeCard
                     key={pokemon.id}
-                    imgFront={pokemon.sprites.front_default}
+                    imgFront={pokemon.sprites?.front_default}
                     name={pokemon.name}
-                    abilities={pokemon.abilities}
-                    moves={pokemon.moves}
+                    abilities={pokemon.abilities || []}
+                    moves={pokemon.moves || []}
                     ></PokeCard>
 
             
-        </div>
+        </div>}
         </div>
     );
 };
