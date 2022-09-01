@@ -3,7 +3,7 @@ import './SearchInput.css';
 import IconSearch from './search.png';
 
 
-const SearchInput = ({setLoading, setError, setPokemonId}) => {
+const SearchInput = ({setPokemon, setLoading, setError, setPokemonId}) => {
   const [poke, setPoke] = useState('');
 
   const handleSubmit = e => {
@@ -16,14 +16,15 @@ const SearchInput = ({setLoading, setError, setPokemonId}) => {
       setPoke('')
       return
     }
+    setPokemon(null)
     setError(true)
   }
   return (
    
       <form className="search-input-container" onSubmit={handleSubmit}>
-      <input type="text" placeholder='Nombre' className='search-field'name="pokemon"
+      <input type="text" placeholder='Name or ID' className='search-field'name="pokemon"
         value={poke} onChange={e => setPoke(e.target.value)}
-        autoComplete="off"/>
+        autoComplete="off" required/>
       <button className='search-button' type='submit' value="">
           <img src={IconSearch} alt="search icon" />
       </button>

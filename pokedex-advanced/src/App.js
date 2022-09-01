@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
 
-  const {pokemon, loading, error, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves} = useFetchPokemon();
+  const {pokemonID, pokemon, loading, error, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves} = useFetchPokemon();
 
   return (
     <Router>
@@ -22,6 +22,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/home" element={<Home
+          pokemonID={pokemonID}
           pokemon={pokemon}
           loading={loading}
           error={error}
@@ -29,6 +30,8 @@ function App() {
           setError={setError}
           setPokemonId={setPokemonId} />} />
           <Route path="/movesinfo" element={<InfoMoves
+          loading={loading}
+          pokemon={pokemon}
           pokeMoves={pokeMoves}
           pokemonMoves={pokemonMoves} />} />
           <Route

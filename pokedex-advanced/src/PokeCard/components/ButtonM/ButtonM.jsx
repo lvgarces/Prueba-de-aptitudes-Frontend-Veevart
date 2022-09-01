@@ -1,9 +1,9 @@
 import React from 'react'
+import './ButtonM.css'
 
 const ButtonM = () => {
-  const onclick = () => {}
   return (
-    <button type="button" class="btn btn-warning">Moves info</button>
+    <button type="button" class="btn btn-warning o-btn">Moves info</button>
   )
 }
 

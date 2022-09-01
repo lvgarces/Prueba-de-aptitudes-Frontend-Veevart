@@ -1,0 +1,14 @@
+.o-cont-infomoves{
+    margin: auto;
+    margin: 2rem 0;
+}
+.o-cont-infomoves h3{
+    text-align: left;
+    font-weight: bold;
+    color: rgb(231, 88, 88);
+    margin: 2rem 0;
+}
+.o-card-cont{
+    display: flex;
+    justify-content: center;
+}

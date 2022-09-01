@@ -1,0 +1,20 @@
+{
+    "normal": "./assets/types/Pokemon_Type_Icon_Normal.svg",
+    "fighting": "./assets/types/Pokemon_Type_Icon_Fighting.svg",
+    "flying": "./assets/types/Pokemon_Type_Icon_Flying.svg",
+    "poison": "./assets/types/Pokemon_Type_Icon_Poison.svg",
+    "ground": "./assets/types/Pokemon_Type_Icon_Ground.svg",
+    "rock": "./assets/types/Pokemon_Type_Icon_Rock.svg",
+    "bug": "./assets/types/Pokemon_Type_Icon_Bug.svg",
+    "ghost": "./assets/types/Pokemon_Type_Icon_Ghost.svg",
+    "steel": "./assets/types/Pokemon_Type_Icon_Steel.svg",
+    "fire": "./assets/types/Pokemon_Type_Icon_Fire.svg",
+    "water": "./assets/types/Pokemon_Type_Icon_Water.svg",
+    "grass": "./assets/types/Pokemon_Type_Icon_Grass.svg",
+    "electric": "./assets/types/Pokemon_Type_Icon_Electric.svg",
+    "psychic": "./assets/types/Pokemon_Type_Icon_Psychic.svg",
+    "ice": "./assets/types/Pokemon_Type_Icon_Ice.svg",
+    "dragon": "./assets/types/Pokemon_Type_Icon_Dragon.svg",
+    "dark": "./assets/types/Pokemon_Type_Icon_Dark.svg",
+    "fairy": "./assets/types/Pokemon_Type_Icon_Fairy.svg"
+}

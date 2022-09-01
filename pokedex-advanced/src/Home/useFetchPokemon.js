@@ -6,20 +6,21 @@ const useFetchPokemon = () => {
   const [pokemon, setPokemon] = useState(null)
   const [pokeMoves, setPokeMoves] = useState([])
   const RandomId = Math.floor(Math.random() * 806 + 1)
-  const [pokemonID, setPokemonId] = useState()
+  const [pokemonID, setPokemonId] = useState(RandomId)
 
   const pokemonMoves = () => {
     if (!pokemon) {
       return
     }
     const moves = pokemon.moves.map(move => fetch(move.move.url))
-
+    setLoading(true)
     Promise.all(moves)
     .then(moves => {
       return Promise.all(moves.map(move => move.json()))
     })
-    .then(moves => 
-      setPokeMoves(moves))
+    .then(moves => {
+      setPokeMoves(moves)
+      setLoading(false)})
     
   }
 
@@ -32,13 +33,17 @@ const useFetchPokemon = () => {
         setError(false)
       })
       .catch(err => {
+        
+        setPokemonId(pokemonID)
+        setPokemon(null)
         setLoading(false)
         setError(true)
+        
       })
 
   }, [pokemonID])
 
-  return { pokemon, loading, error, setPokemon, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves }
+  return { pokemonID, pokemon, loading, error, setLoading, setError, setPokemonId, pokemonMoves, pokeMoves }
 
 
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import PokeCard from '../PokeCard/PokeCard'
 import SearchInput from '../SearchInput/SearchInput';
-import useFetchPokemon from './useFetchPokemon';
+import Spinner from '../Spinner/Spinner';
+import NotFound from '../NotFound/NotFound';
 
 import './Home.css'
 
 
-const Home = ({pokemon, loading, error, setLoading, setError, setPokemonId}) => {
+const Home = ({pokemonID, pokemon, loading, error, setLoading, setError, setPokemonId}) => {
 
     
 
@@ -14,14 +15,14 @@ const Home = ({pokemon, loading, error, setLoading, setError, setPokemonId}) => 
         <div className="container o-cont">
         
         <div className='row' >
-        <h2>Busca al pokemon que quieras</h2>
+        <h2>Find the pokemon you want!</h2>
         <SearchInput
         setError={setError}
         setLoading={setLoading}
         setPokemonId={setPokemonId}></SearchInput>
         </div>
-        
-        {error && <p>No se encuentra</p>}
+        {loading && !pokemon && <Spinner/>}
+        {error && <NotFound pokemon={pokemonID} />}
         {pokemon &&
         <div className="row o-cont-search">
         
