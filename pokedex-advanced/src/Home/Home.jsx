@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion'
 import PokeCard from '../PokeCard/PokeCard'
 import SearchInput from '../SearchInput/SearchInput';
 import Spinner from '../Spinner/Spinner';
@@ -24,7 +25,7 @@ const Home = ({pokemonID, pokemon, loading, error, setLoading, setError, setPoke
         {loading && !pokemon && <Spinner/>}
         {error && <NotFound pokemon={pokemonID} />}
         {pokemon &&
-        <div className="row o-cont-search">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="row o-cont-search">
         
                 
                     <PokeCard
@@ -36,7 +37,7 @@ const Home = ({pokemonID, pokemon, loading, error, setLoading, setError, setPoke
                     ></PokeCard>
 
             
-        </div>}
+        </motion.div>}
         </div>
     );
 };

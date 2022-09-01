@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion"
 import {Link} from 'react-router-dom'
 import MoveCard from "./components/MoveCard";
 import Spinner from '../Spinner/Spinner';
@@ -14,20 +15,20 @@ const InfoMoves = ({loading, pokemon, pokeMoves, pokemonMoves }) => {
       <div>
       <Link to="/home"><h3>Regresar</h3></Link>
     </div>
-      <h1>{pokemon.name} moves</h1>
+      <h1>{pokemon?.name} moves</h1>
       {loading && <Spinner></Spinner>}
-      <div className="row">
+      <div  className="row">
         {pokeMoves.map((move, index) => (
-          <div className="col o-card-cont">
+          <motion.div whileHover={{ scale: 1.1 }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="col o-card-cont">
           <MoveCard
             name={move.name}
             accuracy={move.accuracy}
             power={move.power}
             pp={move.pp}
-            type={move.type.name}
-            effect_entries={move.effect_entries}
+            type={move.type?.name}
+            effect_entries={move.effect_entries || []}
           ></MoveCard>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

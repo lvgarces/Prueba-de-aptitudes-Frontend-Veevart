@@ -29,11 +29,13 @@ function App() {
           setLoading={setLoading}
           setError={setError}
           setPokemonId={setPokemonId} />} />
-          <Route path="/movesinfo" element={<InfoMoves
-          loading={loading}
-          pokemon={pokemon}
-          pokeMoves={pokeMoves}
-          pokemonMoves={pokemonMoves} />} />
+          <Route path="/movesinfo" element={
+            pokemon ? <InfoMoves
+            loading={loading}
+            pokemon={pokemon}
+            pokeMoves={pokeMoves}
+            pokemonMoves={pokemonMoves} />  : <Navigate to="/home" replace/>}
+          />
           <Route
             path="*"
             element={<Navigate to="/home" replace />}
